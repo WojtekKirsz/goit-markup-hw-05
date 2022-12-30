@@ -8,23 +8,10 @@ body {
     color: var(--standard-black);
 }
 
-.main-container {
-    max-width: 1200px;
+.container {
+    width: 1200px;
     margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.image-container {
-    max-width: 1600px;
-    max-height: 600px;
-    margin: 0 auto;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0px 15px;
 }
 
 .site-nav {
@@ -32,8 +19,10 @@ body {
 }
 
 .header-wrapper {
-    padding-top: 24px;
-    padding-bottom: 25px;
+    padding: 24px 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-header {
@@ -63,6 +52,7 @@ body {
     display: flex;
     list-style: none;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .list {
@@ -123,15 +113,17 @@ body {
     --portfolio-grey: #eeeeee;
 }
 
-.main-header-wrapper {
+.order {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url(../images/img-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--background-black-color);
+    text-align: center;
 }
 
-.main-header {
-    text-align: center;
-    padding-top: 200px;
-    padding-bottom: 280px;
+.section {
+    padding: 94px 0;
 }
 
 .big-title {
@@ -143,6 +135,7 @@ body {
     line-height: 1.36;
     letter-spacing: 0.06em;
     color: var(--standard-white);
+    margin: 106px 252px 30px;
 }
 
 .portfolio-header {
@@ -174,7 +167,6 @@ body {
     flex-wrap: wrap;
     list-style: none;
     gap: 30px;
-    margin-bottom: 94px;
 }
 
 .sub-portfolio-wrapper {
@@ -193,41 +185,29 @@ body {
     padding-bottom: 20px;
 }
 
-.main-business-wrapper {
-    padding-bottom: 94px;
+.main-business {
+    margin-top: -94px;
 }
 
-.main-business {
+.main-business-title {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     letter-spacing: 0.03em;
-}
-
-.team-header-wrapper {
-    background: var(--background-button-color);
-    padding-bottom: 94px;
-}
-
-.list-wrapper {
-    padding-top: 94px;
-    padding-bottom: 94px;
-}
-
-.list-wrapper-portfolio {
-    padding-top: 94px;
-    padding-bottom: 56px;
 }
 
 .team-header {
+    background: var(--background-button-color);
+}
+
+.team-header-title {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     letter-spacing: 0.03em;
-    padding-top: 94px;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .team-player-wrapper-2 {
@@ -292,11 +272,8 @@ body {
     line-height: 1.63;
     letter-spacing: 0.03em;
     cursor: pointer;
-    margin-top: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 41px;
-    padding-right: 41px;
+    padding: 10px 41px;
+    margin-bottom: 106px;
 }
 
 .button-services {
@@ -336,8 +313,9 @@ body {
 .social-icons-our-team,
 .social-icons-footer,
 .our-clients-list-item {
-    transition: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 2s;
+    transition-property: color, background-color, border-color, fill;
 }
 
 .footer-layout {
@@ -459,6 +437,7 @@ body {
     width: 40px;
     height: 40px;
     display: flex;
+    border-radius: 50%;
     justify-content: center;
     align-items: center;
 }
@@ -511,7 +490,7 @@ body {
 .social-icons-our-team:hover,
 .social-icons-our-team:focus {
     fill: var(--standard-white);
-    background: var(--standard-blue);
+    background-color: var(--standard-blue);
     border-radius: 50%;
 }
 
@@ -531,10 +510,15 @@ body {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition: visibility 550ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 550ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     left: 0;
     top: 0;
     width: 100%;
@@ -542,17 +526,20 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.is-hidden .modal {
+    transform: translateY(-150%);
+}
+
 .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    transform: translate(-50%, -50%);
+    transform: translateY(0);
     width: 528px;
     min-height: 581px;
     background-color: var(--standard-white);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
