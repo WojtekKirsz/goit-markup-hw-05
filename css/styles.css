@@ -76,19 +76,21 @@ body {
     font-weight: 700;
     letter-spacing: 0.03em;
     font-size: 14px;
-    z-index: 2;
     display: flex;
     justify-content: center;
     padding-top: 27px;
 }
 
+.main-business-img {
+    position: relative;
+}
+
 .main-business-desc-box {
     background-color: rgba(47, 48, 58, 0.8);
-    width: 370px;
-    height: 70px;
-    z-index: 1;
+    width: 100%;
+    padding-bottom: 43px;
     position: absolute;
-    top: 224px;
+    bottom: 4px;
 }
 
 .team-header-inner {
@@ -288,6 +290,18 @@ body {
 .links-format {
     text-decoration: none;
     color: var(--standard-black);
+}
+
+.links-format-agency-active {
+    text-decoration: none;
+    color: var(--standard-blue);
+}
+
+.links-format-agency-active::after {
+    width: 20px;
+    height: 20px;
+    border: 1px solid red;
+    display: flex;
 }
 
 .button-order {
