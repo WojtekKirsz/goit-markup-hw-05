@@ -40,12 +40,14 @@ body {
     font-weight: 500;
     line-height: 1.17;
     letter-spacing: 0.02em;
+    position: relative;
 }
 
 .list-forsubpages {
     list-style: none;
     display: flex;
     margin-left: 93px;
+    align-items: center;
 }
 
 .list-portfolio {
@@ -78,7 +80,7 @@ body {
     font-size: 14px;
     display: flex;
     justify-content: center;
-    padding-top: 27px;
+    /* padding-top: 27px; */
 }
 
 .main-business-img {
@@ -88,9 +90,9 @@ body {
 .main-business-desc-box {
     background-color: rgba(47, 48, 58, 0.8);
     width: 100%;
-    padding-bottom: 43px;
     position: absolute;
     bottom: 4px;
+    padding: 27px 27px;
 }
 
 .team-header-inner {
@@ -298,9 +300,25 @@ body {
 }
 
 .links-format-agency-active::after {
-    width: 20px;
-    height: 20px;
-    border: 1px solid red;
+    content: '';
+    position: absolute;
+    width: 53px;
+    border-bottom: 4px solid var(--standard-blue);
+    bottom: -34px;
+    display: flex;
+}
+
+.links-format-portfolio-active {
+    text-decoration: none;
+    color: var(--standard-blue);
+}
+
+.links-format-portfolio-active::after {
+    content: '';
+    position: absolute;
+    width: 58px;
+    border-bottom: 4px solid var(--standard-blue);
+    bottom: -34px;
     display: flex;
 }
 
